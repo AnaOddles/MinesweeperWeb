@@ -1,0 +1,9 @@
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.deps.json
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.pdb
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.pdb

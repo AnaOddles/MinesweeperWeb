@@ -34,7 +34,8 @@ namespace MinsweeperWeb.Controllers
             if (userDAO.LoginUser(auth) > 0)
             {
                 //return the login successful view and the user
-                return View("Views/Login/LoginSuccess.cshtml", userDAO.GrabUserByID(auth));
+                //return View("Views/Login/LoginSuccess.cshtml", userDAO.GrabUserByID(auth));
+                return View("Views/Game/Index.cshtml");
             }
             else
             {
