@@ -7,3 +7,12 @@ C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\nets
 C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.dll
 C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.pdb
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.deps.json
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.pdb
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.pdb

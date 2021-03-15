@@ -1,43 +1,10 @@
-﻿@model MinesweeperClasses.Board
+﻿@model GameBoardViewModel
 
 <link href="~/css/game.css" rel="stylesheet" type="text/css">
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-<!--Javascript for the right click flagging event-->
-<script>
-    $(document).ready(function()
-    {
-        //Disable the right click event on other areas other than buttons
-        $(document).contextmenu(function () {
-            return false;
-        });
 
 
-
-        //Event listener for the right click
-        $('.game-button').mousedown(function (event) {
-            //if the event is #3 - right click is clicked on
-            if (event.which == 3) {
-                console.log("event 3, right click");
-                console.log(this.getAttribute("value"));
-
-                //Send this click to an event in the button controller
-
-                //URL, Data, and a callback
-                $.post("@Url.Action("HandleRightButtonClick", "Game")", { ID: this.getAttribute("value") }, function ($data) {
-                    //get some data back from the method
-                    console.log($data);
-                    //refresh the entire page
-                    $("body").html($data);
-
-                });
-
-            }
-        });
-    });
-
-
-</script>
 @{
     //Store image names in an array
     int id = 0;
@@ -45,58 +12,68 @@
     //Displaying the image
     string[] imageNames = { "EmptyCell.png", "1Cell.png", "2Cell.png", "3Cell.png", "4Cell.png", "5Cell.png", "6Cell.png", "7Cell.png", "8Cell.png", "BombCell.png", "EmptyCell.png", "FlaggedCell.png" };
 }
-<form>
-    <div class="button-zone">
-        @for (int x = 0; x < Model.size; x++)
-        {
-            for (int y = 0; y < Model.size; y++)
-            {
-                id++;
-                //Start a new line every 10 elements
-                if ((id - 1) % 10 == 0)
-                {
-
-
-
-
-                    <div class="line-break"></div>
-                }
-                <button class="game-button" type="submit" value="@id"
-                        name="ID" controller="Game"
-                        asp-action="HandleButtonClick">
-
-
-
-
-                    @*//Show the proper image according to the buttonState property*@
-                    <div class="button-label">
-                        @if (Model.grid[x, y].flagged)
-                        {
-                            <img class="game-button-image" src="~/img/FlaggedCell.png" />
-                        }
-                        else if (Model.grid[x, y].visited && !Model.grid[x, y].live)
-                        {
-                            <img class="game-button-image" src="~/img/@imageNames[Model.grid[x, y].numOfLive]" />
-                        }
-                        else if (Model.grid[x, y].live && Model.grid[x, y].visited)
-                        {
-                            <img class="game-button-image" src="~/img/@imageNames[9]" />
-                        }
-                        else
-                        {
-                            <img class="game-button-image" src="~/img/UnopenedCell.png" />
-                        }
-                    </div>
-                </button>
-            }
-        }
-    </div>
-</form>
-
-@if (ViewBag.Message != null)
+@if (!Model.EndGame.Equals("In Progress"))
 {
-    <script type="text/javascript">
-                    window.onload = function () {
-                    alert("@ViewBag.Message") };
-    </script>
+    if (Model.EndGame.Equals("Lost"))
+    {
+        <p>Whoops, you've lost! Please try again!</p>
+    }
+    else
+    {
+        <p>You won! :)</p>
+    }
 }
+
+<div style="padding-top: 2em;" class="board" id="board" name="ID" value="@id">
+    <form>
+        <div class="button-zone">
+
+            @for (int x = 0; x < Model.GameBoard.size; x++)
+            {
+                for (int y = 0; y < Model.GameBoard.size; y++)
+                {
+                    id++;
+                    //Start a new line every 10 elements
+                    if ((id - 1) % 10 == 0)
+                    {
+
+
+
+
+                        <div class="line-break"></div>
+                    }
+
+
+                    <button class="game-button" type="submit" value="@id"
+                            name="ID">
+
+
+
+
+                        @*//Show the proper image according to the buttonState property*@
+                        <div class="button-label">
+                            @if (Model.GameBoard.GrabCellFromGrid(id).flagged)
+                            {
+                                <img class="game-button-image" src="~/img/FlaggedCell.png" />
+                            }
+                            else if (Model.GameBoard.GrabCellFromGrid(id).visited && !Model.GameBoard.GrabCellFromGrid(id).live)
+                            {
+                                <img class="game-button-image" src="~/img/@imageNames[Model.GameBoard.GrabCellFromGrid(id).numOfLive]" />
+                            }
+                            else if (Model.GameBoard.GrabCellFromGrid(id).live && Model.GameBoard.GrabCellFromGrid(id).visited)
+                            {
+                                <img class="game-button-image" src="~/img/@imageNames[9]" />
+                            }
+                            else
+                            {
+                                <img class="game-button-image" src="~/img/UnopenedCell.png" />
+                            }
+                        </div>
+                    </button>
+
+                }
+            }
+        </div>
+    </form>
+</div>
+

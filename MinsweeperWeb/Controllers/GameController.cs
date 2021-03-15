@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer;
-
+using MinsweeperWeb.Models;
 
 namespace MinsweeperWeb.Controllers
 {
@@ -19,7 +19,9 @@ namespace MinsweeperWeb.Controllers
         public static GameBusinessService gameRules;
 
         //Property to keep track of the game status 
-        string gameStatus;
+        public static string gameStatus;
+
+        //public static GameBoardViewModel game;
 
         public IActionResult Index()
         {
@@ -28,20 +30,22 @@ namespace MinsweeperWeb.Controllers
 
             //Setup the game board 
             gameBoard = gameRules.SetupGame(10, gameBoard);
-
+            gameStatus = "In Progress";
             //Used only for testing purposes
             gameBoard.VisitAll();
 
-            return View("Index", gameBoard);
+            GameBoardViewModel game = new GameBoardViewModel();
+            game.GameBoard = gameBoard;
+            return View("Index", game);
         }
 
        
 
-        //Manage the button click on he grid 
-        public IActionResult HandleButtonClick(int ID)
+        //Manage the button click on he grid - left click
+        public IActionResult ShowOneMine(int mineID)
         {
             //Play the move and record outcome
-            gameStatus = gameRules.PlayMove(gameBoard, ID);
+            gameStatus = gameRules.PlayMove(gameBoard, mineID);
 
             if (gameStatus == "Won")
             {
@@ -56,15 +60,18 @@ namespace MinsweeperWeb.Controllers
                 ViewBag.Message = "You lost. Let's play again!";
             }
 
+            GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
+            game.EndGame = gameStatus;
+
             //Return the index view again with passing the gameboard
-            return View("Index", gameBoard);
+            return PartialView(game);
         }
 
         //Manage the right button click on he grid 
-        public IActionResult HandleRightButtonClick(int ID)
+        public IActionResult ShowOneMineRightClick(int mineID)
         {
             //Play the move and record outcome
-            gameStatus = gameRules.FlagMine(gameBoard, ID);
+            gameStatus = gameRules.FlagMine(gameBoard, mineID);
 
             if (gameStatus == "Won")
             {
@@ -73,10 +80,26 @@ namespace MinsweeperWeb.Controllers
                 ViewBag.Message = "Congrats you won!!";
             }
 
-            
+            GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
+            game.EndGame = gameStatus;
+
             //Return the index view again with passing the gameboard
-            return View("Index", gameBoard);
+            return PartialView("ShowOneMine", game);
         }
+
+        public IActionResult CheckForGameEnd()
+        {
+            if (!gameStatus.Equals("Active"))
+            {
+                gameBoard.VisitAll();
+            }
+
+            GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(0));
+
+            return PartialView("ShowOneMine", game);
+        }
+
+
 
     }
 }

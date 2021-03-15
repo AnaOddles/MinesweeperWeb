@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj": {}
+    "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\anaod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\anasanchez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\anaod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anasanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +65,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200-preview.20601.7\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

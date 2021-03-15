@@ -1,5 +1,7 @@
-﻿using DataAccessLayer;
+﻿using BusinessLayer;
+using DataAccessLayer;
 using Microsoft.AspNetCore.Mvc;
+using MinesweeperClasses;
 using MinsweeperWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,13 @@ namespace MinsweeperWeb.Controllers
     {
         //Accessing the user model with the DAL 
         UserData userDAO = new UserData();
+
+        //Create an instance of the board obj with
+        //easy difficulty and small size 
+        public static Board gameBoard;
+
+        //Business layer for game logic and rules 
+        public static GameBusinessService gameRules;
 
         //View to the home of Login - login form 
         public IActionResult Index()
@@ -35,7 +44,16 @@ namespace MinsweeperWeb.Controllers
             {
                 //return the login successful view and the user
                 //return View("Views/Login/LoginSuccess.cshtml", userDAO.GrabUserByID(auth));
-                return View("Views/Game/Index.cshtml");
+
+                //Instantiate the game business class
+                gameRules = new GameBusinessService();
+
+                //Setup the game board 
+                gameBoard = gameRules.SetupGame(10, gameBoard);
+
+                //Used only for testing purposes
+                gameBoard.VisitAll();
+                return RedirectToAction("Index", "Game");
             }
             else
             {

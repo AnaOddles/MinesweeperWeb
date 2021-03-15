@@ -8963,23 +8963,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anaod\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\anasanchez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\MinsweeperWeb\\MinsweeperWeb.csproj",
+      "projectUniqueName": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinsweeperWeb\\MinsweeperWeb.csproj",
       "projectName": "MinsweeperWeb",
-      "projectPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\MinsweeperWeb\\MinsweeperWeb.csproj",
-      "packagesPath": "C:\\Users\\anaod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\MinsweeperWeb\\obj\\",
+      "projectPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinsweeperWeb\\MinsweeperWeb.csproj",
+      "packagesPath": "C:\\Users\\anasanchez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinsweeperWeb\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\anaod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anasanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8993,14 +8989,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj": {
-              "projectPath": "C:\\Users\\anaod\\source\\repos\\CST-247\\MinsweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj"
+            "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj": {
+              "projectPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj"
             }
           }
         }
@@ -9050,7 +9046,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200-preview.20601.7\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

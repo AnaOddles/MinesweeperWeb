@@ -22,9 +22,6 @@ namespace BusinessLayer
             gameBoard.CalculateLiveNeighbors();
 
             return gameBoard;
-
-            
-            
         }
 
         /// <summary>
@@ -36,13 +33,13 @@ namespace BusinessLayer
         public string PlayMove(Board gameBoard, int ID) 
         {
             //Grab the cell from out gameboard using the passed ID
-            Cell clickedCell = gameBoard.GrabCellFromGrid(ID);
+            //Cell clickedCell = gameBoard.GrabCellFromGrid(ID);
 
             //only visit a cell with no flags 
-            if (!clickedCell.flagged)
+            if (!gameBoard.GrabCellFromGrid(ID).flagged)
             {
                 //if the cell tht was clicked is a bomb 
-                if (clickedCell.live)
+                if (gameBoard.GrabCellFromGrid(ID).live)
                 {
                     gameBoard.VisitBombCell(ID);
                     return "Lost";
@@ -50,7 +47,7 @@ namespace BusinessLayer
                 //Not live - just a normal cell
                 else
                 {
-                    gameBoard.FloodFill(clickedCell);
+                    gameBoard.FloodFill(gameBoard.GrabCellFromGrid(ID));
 
                     //Check if all non live have been vistied 
                     if (gameBoard.numOfNonLive <= 0)

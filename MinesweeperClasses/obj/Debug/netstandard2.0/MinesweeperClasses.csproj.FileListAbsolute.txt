@@ -7,3 +7,12 @@ C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\MinesweeperClasses\obj\Debug\n
 C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.csproj.CoreCompileInputs.cache
 C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.dll
 C:\Users\anaod\source\repos\CST-247\MinsweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.pdb
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\bin\Debug\netstandard2.0\MinesweeperClasses.deps.json
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\bin\Debug\netstandard2.0\MinesweeperClasses.dll
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\bin\Debug\netstandard2.0\MinesweeperClasses.pdb
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.csprojAssemblyReference.cache
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.AssemblyInfoInputs.cache
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.AssemblyInfo.cs
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.csproj.CoreCompileInputs.cache
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.dll
+C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinesweeperClasses\obj\Debug\netstandard2.0\MinesweeperClasses.pdb
