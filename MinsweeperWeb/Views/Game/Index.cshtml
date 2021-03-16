@@ -15,12 +15,19 @@
 @if (!Model.EndGame.Equals("In Progress"))
 {
     if (Model.EndGame.Equals("Lost"))
-    {
-        <p>Whoops, you've lost! Please try again!</p>
+    {<div class="alert alert-danger">
+            <strong>YOU LOST!</strong> AHHHH YOU HIT A BOMB :(
+        </div>
+
     }
     else
     {
-        <p>You won! :)</p>
+        <div class="alert alert-success">
+            <strong> YOU WON!</strong> CONGRATS!!! WOOHOOO
+        </div>
+
+
+
     }
 }
 
