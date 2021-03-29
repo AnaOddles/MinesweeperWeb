@@ -35,9 +35,9 @@ namespace MinsweeperWeb.Models
         /// </summary>
         /// <param name="auth"></param>
         /// <returns></returns>
-        public User GrabUserByID(Authentication auth)
+        public User GrabUserByID(int userID)
         {
-            return userDAL.GrabUserByID(auth);
+            return userDAL.GrabUserByID(userID);
         }
     }
 }

@@ -897,3 +897,9 @@ C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debu
 C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\MinsweeperWeb.pdb
 C:\Users\anasanchez\Source\Repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\MinsweeperWeb.genruntimeconfig.cache
 C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Game\ShowOneMine.cshtml.g.cs
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Game\EndGame.cshtml.g.cs
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Game\Results.cshtml.g.cs
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Game\LoadedGame.cshtml.g.cs
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

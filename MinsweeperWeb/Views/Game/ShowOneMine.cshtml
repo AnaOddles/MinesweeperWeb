@@ -7,24 +7,11 @@
     //Displaying the image
     string[] imageNames = { "EmptyCell.png", "1Cell.png", "2Cell.png", "3Cell.png", "4Cell.png", "5Cell.png", "6Cell.png", "7Cell.png", "8Cell.png", "BombCell.png", "EmptyCell.png", "FlaggedCell.png" };
 }
-@if (!Model.EndGame.Equals("In progress"))
-{
-    if (Model.EndGame.Equals("Lost"))
-    {
-        <div class="alert alert-danger">
-            <strong> YOU LOST!</strong> AHHHH YOU HIT A BOMB :(
-        </div>
 
-    }
-    else
-    {
-        <div class="alert alert-success">
-            <strong>YOU WON!</strong>  CONGRATS!!! WOOHOOO
-        </div>
+<div id="gameStatus">
+    <p style="visibility:hidden;">InProgress</p>
 
-
-    }
-}
+</div>
 
 <div style="padding-top: 2em;" class="board" id="board" name="board" value="@Model.Mine.ID">
     <form>
@@ -79,6 +66,7 @@
     </form>
 
 </div>
+
 
 
 

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "a1ywNQKm7Ugvwzh9qoUdolMNW9V7YiJd0HmP/WOBkc/LzKGhuHubRM0rPwLcUN/Q6RqRWY6WNGIi+vExNU2kJA==",
+  "dgSpecHash": "A/VB4Fg+0R+y/QDQ3ZnD+bvF7jMauzeEYx7nUf1BzzgpEq4q0mvuoIUQTGxvXxx3joIR4LUXJ2kKwFK4ue2a6Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anasanchez\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\anasanchez\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\anasanchez\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\anasanchez\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\anasanchez\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\anasanchez\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\anasanchez\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

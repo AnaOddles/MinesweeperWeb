@@ -395,14 +395,32 @@ namespace MinesweeperClasses
                     //if all cells that are bombs are flagged
                     if (this.grid[i, j].ID == ID)
                     {
-                        if (this.grid[i, j].flagged)
-                            this.grid[i, j].flagged = false;
-                        else
-                            this.grid[i, j].flagged = true;
+                        if (!this.grid[i, j].visited)
+                        {
+                            if (this.grid[i, j].flagged)
+                                this.grid[i, j].flagged = false;
+                            else
+                                this.grid[i, j].flagged = true;
+                        }
+
                     }
-                        
+
                 }
             }
         }
+
+        public void UnFlagBoard()
+        {
+            //loop through the grid
+            for (int i = 0; i < this.size; i++)
+            {
+                for (int j = 0; j < this.size; j++)
+                {
+                    this.grid[i, j].flagged = false;
+
+                }
+            }
+        }
+
     }
 }

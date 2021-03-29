@@ -115,7 +115,7 @@ namespace DataAccessLayer
 
         }
 
-        public User GrabUserByID(Authentication auth)
+        public User GrabUserByID(int userID)
         {
             User user = new User();
             //Open the connection to the database 
@@ -128,7 +128,7 @@ namespace DataAccessLayer
 
                     //Open up the stored procedure and review the parameters 
                     //required to be passed into the procedure 
-                    cmd.Parameters.AddWithValue("@UserID", auth.UserID);
+                    cmd.Parameters.AddWithValue("@UserID", userID);
 
                     //Run the query 
                     try
@@ -150,7 +150,6 @@ namespace DataAccessLayer
                             user.Username = dataReader["Username"].ToString();
                             user.Password = dataReader["Password"].ToString();
 
-
                             return user;
                         }
                         return null;
@@ -167,6 +166,9 @@ namespace DataAccessLayer
             }
 
         }
+
+        
+
 
 
     }

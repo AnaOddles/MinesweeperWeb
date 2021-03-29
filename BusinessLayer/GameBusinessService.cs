@@ -72,6 +72,16 @@ namespace BusinessLayer
                 return "In progress";
         }
 
+        public Board EndGame(Board gameBoard)
+        {
+            gameBoard.VisitAll();
+            gameBoard.UnFlagBoard();
+            return gameBoard;
+            
+        }
+
+
+
         
     }
 }

@@ -27,6 +27,7 @@ namespace MinsweeperWeb.Controllers
             isRegistered = userDAO.RegisterUser(user);
             if (isRegistered)
             {
+                //CREATE AN EMPTY GAME BOARD STATE FOR THE USER AND PUT IN THEIR GAME GAMESTATEID
                 return View("Views/Register/RegisterSuccess.cshtml", user);
             }
             else

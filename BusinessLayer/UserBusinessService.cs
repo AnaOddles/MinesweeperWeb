@@ -37,9 +37,10 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="auth"></param>
         /// <returns></returns>
-        public User GrabUserByID(Authentication auth)
+        public User GrabUserByID(int userID)
         {
-            return userDAO.GrabUserByID(auth);
+            return userDAO.GrabUserByID(userID);
         }
+
     }
 }

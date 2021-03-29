@@ -25,6 +25,15 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
       }
     }
   },
@@ -171,11 +180,39 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "Newtonsoft.Json >= 13.0.1"
     ]
   },
   "packageFolders": {
@@ -184,11 +221,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anasanchez\\Source\\Repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj",
+      "projectUniqueName": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj",
       "projectName": "MinesweeperClasses",
-      "projectPath": "C:\\Users\\anasanchez\\Source\\Repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj",
+      "projectPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\MinesweeperClasses.csproj",
       "packagesPath": "C:\\Users\\anasanchez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anasanchez\\Source\\Repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\obj\\",
+      "outputPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinesweeperClasses\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\anasanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -222,6 +259,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
           }
         },
         "imports": [

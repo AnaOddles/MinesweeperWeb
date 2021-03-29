@@ -42,6 +42,7 @@ namespace MinsweeperWeb.Controllers
             //if the auth is valid - take to login successful 
             if (userDAO.LoginUser(auth) > 0)
             {
+                int userID = userDAO.LoginUser(auth);
                 //return the login successful view and the user
                 //return View("Views/Login/LoginSuccess.cshtml", userDAO.GrabUserByID(auth));
 
@@ -53,7 +54,10 @@ namespace MinsweeperWeb.Controllers
 
                 //Used only for testing purposes
                 gameBoard.VisitAll();
-                return RedirectToAction("Index", "Game");
+
+                UserData userData = new UserData();
+                User user = userData.GrabUserByID(userID);
+                return RedirectToAction("Index", "Game", user);
             }
             else
             {
