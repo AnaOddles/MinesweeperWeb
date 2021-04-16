@@ -21,7 +21,7 @@ namespace DataAccessLayer
         }
 
         /// <summary>
-        /// Used to register a user
+        /// Data Access - Adds a user to Database
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
@@ -68,7 +68,7 @@ namespace DataAccessLayer
         }
 
       /// <summary>
-      /// Used to authenticate user and see if exists 
+      /// Data Access - Used to authenticate user and see if exists 
       /// </summary>
       /// <param name="auth"></param>
       /// <returns></returns>
@@ -115,6 +115,11 @@ namespace DataAccessLayer
 
         }
 
+        /// <summary>
+        /// Data Access - Grabs User ID
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns></returns>
         public User GrabUserByID(int userID)
         {
             User user = new User();

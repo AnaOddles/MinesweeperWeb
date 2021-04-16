@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLayer;
+using Microsoft.AspNetCore.Http;
 
 namespace MinsweeperWeb.Controllers
 {
@@ -27,7 +28,16 @@ namespace MinsweeperWeb.Controllers
             isRegistered = userDAO.RegisterUser(user);
             if (isRegistered)
             {
-                //CREATE AN EMPTY GAME BOARD STATE FOR THE USER AND PUT IN THEIR GAME GAMESTATEID
+                //Log the user in 
+                Authentication auth = new Authentication();
+                auth.Username = user.Username;
+                auth.Password = user.Password;
+                int userID = userDAO.LoginUser(auth);
+
+                //Start the user sessions
+                HttpContext.Session.SetString("username", user.Username);
+                HttpContext.Session.SetInt32("userID", userID);
+
                 return View("Views/Register/RegisterSuccess.cshtml", user);
             }
             else

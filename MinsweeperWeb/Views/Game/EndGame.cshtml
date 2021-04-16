@@ -7,29 +7,27 @@
     //Displaying the image
     string[] imageNames = { "EmptyCell.png", "1Cell.png", "2Cell.png", "3Cell.png", "4Cell.png", "5Cell.png", "6Cell.png", "7Cell.png", "8Cell.png", "BombCell.png", "EmptyCell.png", "FlaggedCell.png" };
 }
-<div id="gameStatus">
-    <p style="visibility:hidden;">GameEnd</p>
+<div style="margin-bottom: 1px; margin-left: 0%; margin-right: 38%">
+    @{
+        if (Model.EndGame.Equals("Lost"))
+        {
+            <div class="alert alert-danger">
+                <strong> YOU LOST!</strong> AHHHH YOU HIT A BOMB :(
+            </div>
+
+        }
+        else
+        {
+            <div class="alert alert-success">
+                <strong>YOU WON!</strong>  CONGRATS!!! WOOHOOO
+            </div>
+
+
+        }
+    }
 </div>
-@{
-    if (Model.EndGame.Equals("Lost"))
-    {
-        <div class="alert alert-danger">
-            <strong> YOU LOST!</strong> AHHHH YOU HIT A BOMB :(
-        </div>
-
-    }
-    else
-    {
-        <div class="alert alert-success">
-            <strong>YOU WON!</strong>  CONGRATS!!! WOOHOOO
-        </div>
-
-
-    }
-}
-
-<div style="padding-top: 2em;" class="board" id="board" name="board" value="@Model.Mine.ID">
-    <div class="button-zone" pointer-events: none;>
+<div style="padding-top: 1px;" class="board" id="board" name="board" value="@Model.Mine.ID">
+    <div class="button-zone" style="pointer-events: none;">
 
         @for (int x = 0; x < Model.GameBoard.size; x++)
         {
@@ -77,15 +75,20 @@
             }
         }
     </div>
+    <h3 style="margin-left: 0%; margin-right: 38%;">@Model.numOfClick</h3>
 </div>
+<div style="margin-left: 0%; margin-right: 38%;" id="time"></div>
 
-<div class="play-again">
+<div class="play-again" style="margin-left: 0%; margin-right: 38%;">
     <form asp-controller="Game" asp-action="PlayAgain">
         <button class="play-again-button" type="submit"
                 name="ID">
             PlayAgain
         </button>
     </form>
+</div>
+<div id="gameStatus">
+    <p style="visibility:hidden;">GameEnd</p>
 </div>
 
 

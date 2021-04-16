@@ -9051,7 +9051,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anasanchez\\.nuget\\packages\\": {}
+    "C:\\Users\\anasanchez\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -9062,14 +9063,19 @@
       "packagesPath": "C:\\Users\\anasanchez\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\anasanchez\\source\\repos\\AnaOddles\\MinesweeperWeb\\MinsweeperWeb\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
+      ],
       "configFilePaths": [
         "C:\\Users\\anasanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },

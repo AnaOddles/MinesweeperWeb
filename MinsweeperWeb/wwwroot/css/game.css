@@ -13,6 +13,7 @@
 .button-zone {
     display: flex;
     flex-wrap: wrap;
+    text-align:center;
 }
 
 .line-break {

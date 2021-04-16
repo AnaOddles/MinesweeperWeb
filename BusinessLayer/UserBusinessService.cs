@@ -11,7 +11,6 @@ namespace BusinessLayer
         //Instantiate our UserDAO
         UserDAO userDAO = new UserDAO();
 
-        
         /// <summary>
         /// Register method -passing in user model
         /// </summary>

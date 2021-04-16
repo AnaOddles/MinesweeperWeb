@@ -1,0 +1,72 @@
+﻿@model GameBoardViewModel
+
+@{
+    //Store image names in an array
+    int id = 0;
+
+    //Displaying the image
+    string[] imageNames = { "EmptyCell.png", "1Cell.png", "2Cell.png", "3Cell.png", "4Cell.png", "5Cell.png", "6Cell.png", "7Cell.png", "8Cell.png", "BombCell.png", "EmptyCell.png", "FlaggedCell.png" };
+}
+
+<div id="gameStatus">
+    <p style="visibility:hidden;">InProgress</p>
+</div>
+<div style="padding-top: 1px;" class="board" id="board" name="board" value="@Model.Mine.ID">
+
+        <div class="button-zone">
+
+            @for (int x = 0; x < Model.GameBoard.size; x++)
+            {
+                for (int y = 0; y < Model.GameBoard.size; y++)
+                {
+                    id++;
+                    //Start a new line every 10 elements
+                    if ((id - 1) % 10 == 0)
+                    {
+
+
+
+
+                        <div class="line-break"></div>
+                    }
+
+
+                    <button class="game-button" type="submit" value="@id"
+                            name="ID">
+
+
+
+
+                        @*//Show the proper image according to the buttonState property*@
+                        <div class="button-label">
+                            @if (Model.GameBoard.GrabCellFromGrid(id).flagged)
+                            {
+                                <img class="game-button-image" src="~/img/FlaggedCell.png" />
+                            }
+                            else if (Model.GameBoard.GrabCellFromGrid(id).visited && !Model.GameBoard.GrabCellFromGrid(id).live)
+                            {
+                                <img class="game-button-image" src="~/img/@imageNames[Model.GameBoard.GrabCellFromGrid(id).numOfLive]" />
+                            }
+                            else if (Model.GameBoard.GrabCellFromGrid(id).live && Model.GameBoard.GrabCellFromGrid(id).visited)
+                            {
+                                <img class="game-button-image" src="~/img/@imageNames[9]" />
+                            }
+                            else
+                            {
+                                <img class="game-button-image" src="~/img/UnopenedCell.png" />
+                            }
+                        </div>
+                    </button>
+
+                }
+            }
+        </div>
+</div>
+
+<h3 style="margin-left: 0%; margin-right: 38%;">@Model.numOfClick</h3>
+
+
+
+
+
+

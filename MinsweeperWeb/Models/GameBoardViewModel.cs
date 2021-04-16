@@ -14,13 +14,18 @@ namespace MinsweeperWeb.Models
 
         public string EndGame { get; set; }
 
-        public User User { get; set; }
+        public string UserName { get; set; }
+
+        public int numOfClick { get; set; }
+
+        public int loadedSeconds { get; set; }
 
         public GameBoardViewModel(Board gameBoard, Cell mine)
         {
             this.GameBoard = gameBoard;
             this.Mine = mine;
             this.EndGame = "In Progress";
+            this.loadedSeconds = 0;
         }
 
         public GameBoardViewModel() 

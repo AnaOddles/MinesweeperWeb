@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccessLayer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MinesweeperClasses;
 using MinsweeperWeb.Models;
@@ -28,7 +29,7 @@ namespace MinsweeperWeb.Controllers
             return View();
         }
 
-
+        
         /// <summary>
         /// POST request for user to log in
         /// </summary>
@@ -43,27 +44,37 @@ namespace MinsweeperWeb.Controllers
             if (userDAO.LoginUser(auth) > 0)
             {
                 int userID = userDAO.LoginUser(auth);
-                //return the login successful view and the user
-                //return View("Views/Login/LoginSuccess.cshtml", userDAO.GrabUserByID(auth));
-
-                //Instantiate the game business class
-                gameRules = new GameBusinessService();
-
-                //Setup the game board 
-                gameBoard = gameRules.SetupGame(10, gameBoard);
-
-                //Used only for testing purposes
-                gameBoard.VisitAll();
-
                 UserData userData = new UserData();
                 User user = userData.GrabUserByID(userID);
-                return RedirectToAction("Index", "Game", user);
+
+                //Sessions start 
+                HttpContext.Session.SetString("username", user.Username);
+                HttpContext.Session.SetInt32("userID", userID);
+
+                return RedirectToAction("Index", "Game");
             }
+            //User not logged in 
             else
             {
+                //Remove all sessions that hold credentials 
+                HttpContext.Session.Remove("username");
+                HttpContext.Session.Remove("userID");
+
                 return View("Views/Login/LoginFail.cshtml");
             }
 
+        }
+
+        public IActionResult Logout()
+        {
+            //Remove all sessions that hold credentials
+            HttpContext.Session.SetString("username", String.Empty);
+            HttpContext.Session.SetInt32("userID", 0);
+
+            //Remove all sessions that hold credentials 
+            HttpContext.Session.Remove("username");
+            HttpContext.Session.Remove("userID");
+            return View("Index");
         }
     }
 }

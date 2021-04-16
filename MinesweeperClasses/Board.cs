@@ -409,6 +409,9 @@ namespace MinesweeperClasses
             }
         }
 
+        /// <summary>
+        /// Helper function -  Un-flag the whole baord 
+        /// </summary>
         public void UnFlagBoard()
         {
             //loop through the grid
@@ -417,7 +420,6 @@ namespace MinesweeperClasses
                 for (int j = 0; j < this.size; j++)
                 {
                     this.grid[i, j].flagged = false;
-
                 }
             }
         }

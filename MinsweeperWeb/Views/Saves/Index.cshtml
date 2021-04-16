@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DataAccessLayer.Game>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.gameStateID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seconds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numOfClicks)
+            </th>
+            <th>
+                Load
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameStateID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.seconds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numOfClicks)
+            </td>
+            <td>
+                @using (Html.BeginForm("LoadOneGame", "Game"))
+                {
+                    <button id="gameStateID" type="submit">Load</button>
+                    <input id="loadSave" style="visibility:hidden" value="@item.gameStateID" type="number" name="gameStateID" />
+                }
+            </td>
+            <td>
+                @using (Html.BeginForm("Delete", "Saves"))
+                {
+                <button id="gameStateID" type="submit">Delete</button>
+                <input id="deleteSave" style="visibility:hidden" value="@item.gameStateID" type="number" name="gameStateID" />
+
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

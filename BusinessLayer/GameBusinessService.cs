@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DataAccessLayer;
 using MinesweeperClasses;
 
 namespace BusinessLayer
@@ -62,6 +63,12 @@ namespace BusinessLayer
             return "In progress";
         }
 
+        /// <summary>
+        /// Flags a mine on the gameboard
+        /// </summary>
+        /// <param name="gameBoard"></param>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public string FlagMine(Board gameBoard, int ID)
         {
             gameBoard.FlagCell(ID);
@@ -72,6 +79,11 @@ namespace BusinessLayer
                 return "In progress";
         }
 
+        /// <summary>
+        /// Sets up the board for the end of game 
+        /// </summary>
+        /// <param name="gameBoard"></param>
+        /// <returns></returns>
         public Board EndGame(Board gameBoard)
         {
             gameBoard.VisitAll();
@@ -79,9 +91,5 @@ namespace BusinessLayer
             return gameBoard;
             
         }
-
-
-
-        
     }
 }

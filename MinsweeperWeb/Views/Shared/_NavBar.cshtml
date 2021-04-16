@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/NavBar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div class="text-center">
+        <h1 class="display-6">BombSquad</h1>
+        <br />
+        <img class="game-button-image" src="~/img/BombCell.png" />
+    </div>
+
+    <div class="sidenav">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BombSquad</a>
+        @if (String.IsNullOrEmpty(Context.Session.GetString("username")))
+        {
+            <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Index">Register</a>
+
+            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+
+        }
+        else
+        {
+
+            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
+        }
+        @if (!String.IsNullOrEmpty(Context.Session.GetString("username")))
+        {
+            <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Index">Play</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Saves" asp-action="Index">Saves</a>
+
+        }
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+

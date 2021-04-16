@@ -1,9 +1,6 @@
 ﻿@model GameBoardViewModel
 <link href="~/css/game.css" rel="stylesheet">
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-
-
 @{
     //Store image names in an array
     int id = 0;
@@ -11,64 +8,73 @@
     //Displaying the image
     string[] imageNames = { "EmptyCell.png", "1Cell.png", "2Cell.png", "3Cell.png", "4Cell.png", "5Cell.png", "6Cell.png", "7Cell.png", "8Cell.png", "BombCell.png", "EmptyCell.png", "FlaggedCell.png" };
 }
-<p id="user">Let's Play, @Model.User.Username!</p>
-<div style="padding-top: 2em;" class="board" id="board" name="ID" value="@id">
-    <form>
-        <div class="button-zone">
+@if (String.IsNullOrEmpty(Model.UserName))
+{
 
-            @for (int x = 0; x < Model.GameBoard.size; x++)
-            {
-                for (int y = 0; y < Model.GameBoard.size; y++)
-                {
-                    id++;
-                    //Start a new line every 10 elements
-                    if ((id - 1) % 10 == 0)
-                    {
-                        <div class="line-break"></div>
-                    }
-
-
-                    <button class="game-button" type="submit" value="@id"
-                            name="ID">
-
-
-
-
-                        @*//Show the proper image according to the buttonState property*@
-                        <div class="button-label">
-                            @if (Model.GameBoard.GrabCellFromGrid(id).flagged)
-                            {
-                                <img class="game-button-image" src="~/img/FlaggedCell.png" />
-                            }
-                            else if (Model.GameBoard.GrabCellFromGrid(id).visited && !Model.GameBoard.GrabCellFromGrid(id).live)
-                            {
-                                <img class="game-button-image" src="~/img/@imageNames[Model.GameBoard.GrabCellFromGrid(id).numOfLive]" />
-                            }
-                            else if (Model.GameBoard.GrabCellFromGrid(id).live && Model.GameBoard.GrabCellFromGrid(id).visited)
-                            {
-                                <img class="game-button-image" src="~/img/@imageNames[9]" />
-                            }
-                            else
-                            {
-                                <img class="game-button-image" src="~/img/UnopenedCell.png" />
-                            }
-                        </div>
-                    </button>
-
-                }
-            }
-        </div>
-    </form>
+    <p id="user">Welcome, guest!</p>
+}
+else
+{
+    <p id="user">Let's Play, @Model.UserName!</p>
+}
+<div>
+    <p style="visibility:hidden;" id="seconds"></p>
 </div>
-<h3>@ViewBag.Clicks</h3>
-<h3>@ViewBag.Timer</h3>
-<form asp-action="OnSave" asp-controller="Game">
-    <button type="submit" id="save">Save Game</button>
-</form>
+<div style="padding-top: 1px; margin-left:25%;" class="board" id="board" name="ID" value="@id">
+    <div class="button-zone">
+
+        @for (int x = 0; x < Model.GameBoard.size; x++)
+        {
+            for (int y = 0; y < Model.GameBoard.size; y++)
+            {
+                id++;
+                //Start a new line every 10 elements
+                if ((id - 1) % 10 == 0)
+                {
+                    <div class="line-break"></div>
+                }
 
 
-<form asp-action="OnLoad" asp-controller="Game">
-    <button type="submit" class="load">Load Game</button>
-</form>
+                <button class="game-button" value="@id"
+                        name="ID">
+
+
+
+
+                    @*//Show the proper image according to the buttonState property*@
+                    <div class="button-label">
+                        @if (Model.GameBoard.GrabCellFromGrid(id).flagged)
+                        {
+                            <img class="game-button-image" src="~/img/FlaggedCell.png" />
+                        }
+                        else if (Model.GameBoard.GrabCellFromGrid(id).visited && !Model.GameBoard.GrabCellFromGrid(id).live)
+                        {
+                            <img class="game-button-image" src="~/img/@imageNames[Model.GameBoard.GrabCellFromGrid(id).numOfLive]" />
+                        }
+                        else if (Model.GameBoard.GrabCellFromGrid(id).live && Model.GameBoard.GrabCellFromGrid(id).visited)
+                        {
+                            <img class="game-button-image" src="~/img/@imageNames[9]" />
+                        }
+                        else
+                        {
+                            <img class="game-button-image" src="~/img/UnopenedCell.png" />
+                        }
+                    </div>
+                </button>
+
+            }
+        }
+    </div>
+</div>
+
+<div style="margin-left: 0%; margin-right: 38%;" id="timer"></div>
+
+@if (!String.IsNullOrEmpty(Model.UserName))
+{
+    <button class="save">Save Game</button>
+    <button class="load">Load Game</button>
+}
+
+
 
 

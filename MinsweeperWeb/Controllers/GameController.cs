@@ -9,6 +9,7 @@ using MinsweeperWeb.Models;
 using DataAccessLayer;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace MinsweeperWeb.Controllers
 {
@@ -24,18 +25,16 @@ namespace MinsweeperWeb.Controllers
         //Property to keep track of the game status 
         public static string gameStatus;
 
-        //Propert to keep track of the current user
-        public static User user;
+        //Property to keep track of the current user
+        public static string userName;
 
         //Game properties
-        static int clicks = 0;
-        static Stopwatch Timer = new Stopwatch();
-        public TimeSpan ts = Timer.Elapsed;
-
-        public IActionResult Index(User userModel)
+        public static int clicks;
+        
+        public IActionResult Index()
         {
-            //grab the current user and set it to the controller so we can keep track of it
-            user = userModel;
+            //Create an instance of the GameBoardViewModel
+            GameBoardViewModel game = new GameBoardViewModel();
 
             //Instantiate the game business class
             gameRules = new GameBusinessService();
@@ -44,44 +43,49 @@ namespace MinsweeperWeb.Controllers
             gameBoard = gameRules.SetupGame(10, gameBoard);
             gameStatus = "In Progress";
 
-            Timer.Start(); //Starts timer
+            //If the session is not empty - user logged in
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
+            {
+                //Grab their username
+                userName = HttpContext.Session.GetString("username");
+            }
+            else
+                userName = "";
+           
+            
 
-            // Format and display the TimeSpan value.
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            @ViewBag.Timer = elapsedTime;
 
-            GameBoardViewModel game = new GameBoardViewModel();
+
             game.GameBoard = gameBoard;
-            game.User = user;
+            game.numOfClick = clicks;
+            game.UserName = userName;
+
+            //Pass the GameBoardViewModel with the next view
             return View("Index", game);
         }
 
         //Manage the button click on he grid - left click
-        public IActionResult ShowOneMine(int mineID)
+        public IActionResult LeftClickContinueGame(int mineID)
         {
+            //Update the click property 
+            clicks++;
+
             //Play the move and record outcome
             gameStatus = gameRules.PlayMove(gameBoard, mineID);
 
             //If the player revealed all mine
             if (gameStatus == "Won")
             {
-                Timer.Stop(); //Stops Timer
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                 ts.Hours, ts.Minutes, ts.Seconds,
-                 ts.Milliseconds / 10);
-
-                //Sent timer and clicks to the view
-                @ViewBag.Timer = elapsedTime;
-                @ViewBag.Clicks = "Clicks: " + clicks;
+                //Setup the ViewBags for message
                 ViewBag.Message = "Congrats you won!!";
 
                 //End the game and make our game view model
                 gameBoard = gameRules.EndGame(gameBoard);
                 GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
-                game.User = user;
+                game.UserName = userName;
                 game.EndGame = gameStatus;
+                game.numOfClick = clicks;
+
 
                 return PartialView("EndGame", game);
             }
@@ -89,190 +93,205 @@ namespace MinsweeperWeb.Controllers
             //The player clicked on a mine
             else if (gameStatus == "Lost")
             {
-                //Stio the timer and format it 
-                Timer.Stop(); //Stops Timer
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-               ts.Hours, ts.Minutes, ts.Seconds,
-               ts.Milliseconds / 10);
-                @ViewBag.Timer = elapsedTime;
-                @ViewBag.Clicks = "Clicks: " + clicks;
-
-                //Sent the lost game message and create our game view model
+                //Setup the ViewBags for message
                 ViewBag.Message = "You lost. Let's play again!";
+
+                //End the game and make our game view model
                 gameBoard = gameRules.EndGame(gameBoard);
                 GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
-                game.User = user;
+                game.UserName = userName;
                 game.EndGame = gameStatus;
+                game.numOfClick = clicks;
 
                 return PartialView("EndGame", game);
             }
             //Player has not won or lost - still playing
             else 
             {
-                //Increment the clicks 
-                clicks++;
-
-                //Send clicks to view
-                @ViewBag.Clicks = "Clicks: " + clicks;
-
-                //Calc time and pass to ViewBag
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                 ts.Hours, ts.Minutes, ts.Seconds,
-                 ts.Milliseconds / 10);
-                @ViewBag.Timer = elapsedTime;
-
                 //Create our game view model
                 GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
-                game.User = user;
+                game.UserName = userName;
                 game.EndGame = gameStatus;
+                game.numOfClick = clicks;
 
-                return PartialView("ShowOneMine", game);
+                return PartialView("InProgressGame", game);
             }
-
-
         }
 
         //Manage the right button click on he grid 
-        public IActionResult ShowOneMineRightClick(int mineID)
+        public IActionResult RightClickContinueGame(int mineID)
         {
+            //Update the click property 
+            clicks++;
+
             //Play the move and record outcome
             gameStatus = gameRules.FlagMine(gameBoard, mineID);
 
             //If player flagged all bombs
             if (gameStatus == "Won")
             {
-                //Stop the timer and format it
-                Timer.Stop(); //Stops Timer
-                @ViewBag.Clicks = "Clicks: " + clicks;
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                  ts.Hours, ts.Minutes, ts.Seconds,
-                  ts.Milliseconds / 10);
-                @ViewBag.Timer = elapsedTime;
-
-
-                //Create win message and sent through view bag
+                //Setup the ViewBags for message
                 ViewBag.Message = "Congrats you won!!";
+
+                //Create our game view model
                 gameBoard = gameRules.EndGame(gameBoard);
                 GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
-                game.User = user;
+                game.UserName = userName;
                 game.EndGame = gameStatus;
+                game.numOfClick = clicks;
 
                 return PartialView("EndGame", game);
             }
 
             else 
             {
-                Timer.Stop(); //Stops Timer
-                clicks++;
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                  ts.Hours, ts.Minutes, ts.Seconds,
-                  ts.Milliseconds / 10);
-                @ViewBag.Timer = elapsedTime;
-                @ViewBag.Clicks = "Clicks: " + clicks;
-
+                //Create our game view model
                 GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(mineID));
-                game.User = user;
+                game.UserName = userName;
                 game.EndGame = gameStatus;
+                game.numOfClick = clicks;
 
-                return PartialView("ShowOneMine", game);
+                return PartialView("InProgressGame", game);
             }
-
-            
-
-            //Return the index view again with passing the gameboard
-            //return PartialView("ShowOneMine", game);
         }
 
         //Manages request when a player wants to play new game
         public IActionResult PlayAgain()
         {
-            //Reset timer and clicks
+            //Reset the click proprty and gamestatus
             clicks = 0;
-            Timer.Restart();
-
-            //Format timer
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                 ts.Hours, ts.Minutes, ts.Seconds,
-                 ts.Milliseconds / 10);
-            @ViewBag.Timer = elapsedTime;
+            gameStatus = "In Progress";
 
             //Setup the game board 
             gameBoard = gameRules.SetupGame(10, gameBoard);
-            gameStatus = "In Progress";
+            
             
             //Create game board view model
             GameBoardViewModel game = new GameBoardViewModel();
             game.GameBoard = gameBoard;
-            game.User = user;
-           
+            game.UserName = userName;
+            game.numOfClick = clicks;
+
             return View("Index", game);
         }
 
-
-        //Method to create a new game state and return the index game method 
-        //allow the user an option to create a new gamestate
-        //that will make a new gameboard and replace the current one in the database 
-
-        //Method that will publish the game score and then start a new game 
-        //will run the index view from the game views
-
-
         //Manages when player saves game 
-        public IActionResult OnSave()
+        public IActionResult OnSave(int seconds)
         {
-            //Stop timer 
-            Timer.Stop();
-
-            //Create a string for formated time useing the timer
-            string e = String.Format("{0:00}:{1:00}:{2:00}",
-             Timer.Elapsed.Hours, Timer.Elapsed.Minutes, Timer.Elapsed.Seconds
-            );
-
-            string myTime = e;
-            var v = myTime.Split(":".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-
-            //Create a DateTime property for our database
-            DateTime times = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(v[0]), int.Parse(v[1]), int.Parse(v[2]));
-
-
-            //Game SaveData = new Game();
-            //SaveData.numOfClicks = clicks;
-
-            //Using KSON object seralization - turn our gameboard into a string for database
+            //Using JSON object seralization - turn our gameboard into a string for database
             string gameString = JsonConvert.SerializeObject(gameBoard);
 
-            //Create new instance of gameDAO obj
-            GameDAO gameDAO = new GameDAO();
-            bool success = gameDAO.SaveGame(gameString, user, clicks, times); 
-            return View("Results", success);
+            //Create new instance of GameBusinessService
+            GameDataBusinessService gameBusiness = new GameDataBusinessService();
+
+            //Use session to grab user
+            int userID = (int)HttpContext.Session.GetInt32("userID");
+
+            //Make an instance of Game data object 
+            Game gameDataObj = new(gameString, seconds, clicks, userID);
+            
+            //Save game
+            bool success = gameBusiness.SaveGame(gameDataObj);
+
+            //Create game board view model
+            GameBoardViewModel game = new GameBoardViewModel(gameBoard, gameBoard.GrabCellFromGrid(1));
+            game.UserName = userName;
+            game.EndGame = gameStatus;
+            game.numOfClick = clicks;
+
+            return PartialView("InProgressGame", game); 
         }
 
 
         //Mamages when a player loads their last save from the database
         public IActionResult OnLoad()
         {
-            //Create a new instance of GameDAO and load the game
-            GameDAO gameDAO = new GameDAO();
-            Game gameObject = gameDAO.LoadGame(user);
+            //Create new instance of GameBusinessService
+            GameDataBusinessService gameDataBusiness = new GameDataBusinessService();
 
-            //Using seralization and object casting conver the boardstring 
+            //Use session to grab user
+            int userID = (int)HttpContext.Session.GetInt32("userID");
+
+            //Load the game
+            Game gameObject = gameDataBusiness.LoadGame(userID);
+
+            //Using seralization and object casting convert the boardstring 
             //from the database into a game board object
             gameBoard = JsonConvert.DeserializeObject<Board>(gameObject.boardString);
 
-            
+            //Debug
             Debug.WriteLine(JsonConvert.DeserializeObject<Board>(gameObject.boardString));
 
             //Create game view model
             GameBoardViewModel game = new GameBoardViewModel();
             game.GameBoard = gameBoard;
-            game.User = user;
+            game.UserName = userName;
             game.EndGame = gameStatus;
             game.Mine = gameBoard.GrabCellFromGrid(1);
+            game.numOfClick = gameObject.numOfClicks;
+            game.loadedSeconds = gameObject.seconds;
 
-            //Sent time and clicks
-            
+            //Debug the seconds
+            Debug.WriteLine(game.loadedSeconds);
+
+            return PartialView("InProgressGame", game);
+        }
+
+        /// <summary>
+        /// Loads one save using gameStateID
+        /// </summary>
+        /// <param name="gameStateID"></param>
+        /// <returns></returns>
+        public IActionResult LoadOneGame(int gameStateID)
+        {
+
+            ///Create new instance of GameBusinessService
+            GameDataBusinessService gameDataBusiness = new GameDataBusinessService();
+
+            //Use session to grab user
+            //If the session is not empty - user logged in
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
+            {
+                //Grab their username
+                userName = HttpContext.Session.GetString("username");
+            }
+
+            //Load the game
+            Game gameObject = gameDataBusiness.LoadOneGame(Convert.ToInt32(gameStateID));
+
+            //Using seralization and object casting convert the boardstring 
+            //from the database into a game board object
+            gameBoard = JsonConvert.DeserializeObject<Board>(gameObject.boardString);
+
+            //Create game view model
+            GameBoardViewModel game = new GameBoardViewModel();
+            game.GameBoard = gameBoard;
+            game.UserName = userName;
+            game.EndGame = gameStatus;
+            game.Mine = gameBoard.GrabCellFromGrid(1);
+            game.numOfClick = gameObject.numOfClicks;
+            game.loadedSeconds = gameObject.seconds;
+
+
             return View("LoadedGame", game);
         }
+
+        //THIS CAN BE AN API
+        public int getLoadedSeconds()
+        {
+            //Use session to grab user
+            int userID = (int)HttpContext.Session.GetInt32("userID");
+
+            //Create a new instance of GameDAO and load the game
+            GameDAO gameDAO = new GameDAO();
+            Game gameObject = gameDAO.LoadGame(userID);
+
+            return gameObject.seconds;
+        }
+
+
+
+
 
 
 

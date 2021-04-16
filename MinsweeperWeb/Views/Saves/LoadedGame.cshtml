@@ -1,4 +1,6 @@
 ﻿@model GameBoardViewModel
+<link href="~/css/game.css" rel="stylesheet">
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 @{
     //Store image names in an array
@@ -7,14 +9,11 @@
     //Displaying the image
     string[] imageNames = { "EmptyCell.png", "1Cell.png", "2Cell.png", "3Cell.png", "4Cell.png", "5Cell.png", "6Cell.png", "7Cell.png", "8Cell.png", "BombCell.png", "EmptyCell.png", "FlaggedCell.png" };
 }
-
-<div id="gameStatus">
-    <p style="visibility:hidden;">InProgress</p>
-
+<p id="user">Let's Play, @Model.UserName!</p>
+<div>
+    <p style="visibility:hidden;" id="seconds"></p>
 </div>
-
-<div style="padding-top: 2em;" class="board" id="board" name="board" value="@Model.Mine.ID">
-    <form>
+<div style="padding-top: 2em;" class="board" id="board" name="ID" value="@id">
         <div class="button-zone">
 
             @for (int x = 0; x < Model.GameBoard.size; x++)
@@ -25,10 +24,6 @@
                     //Start a new line every 10 elements
                     if ((id - 1) % 10 == 0)
                     {
-
-
-
-
                         <div class="line-break"></div>
                     }
 
@@ -63,10 +58,12 @@
                 }
             }
         </div>
-    </form>
-
 </div>
+<h3>@Model.numOfClick</h3>
 
+<div id="timer"></div>
+<button class="save">Save Game</button>
+<button class="load">Load Game</button>
 
 
 

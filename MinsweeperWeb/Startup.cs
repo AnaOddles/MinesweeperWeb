@@ -23,6 +23,18 @@ namespace MinsweeperWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //------------------------------------------
+            //Added for session variables from Micrsoft Docs
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            //----------------------------------------------
+
             services.AddControllersWithViews();
         }
 
@@ -45,6 +57,11 @@ namespace MinsweeperWeb
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //-----------------------------------------------
+            //Microsoft Docs - sessions 
+            app.UseSession();
+            //------------------------------------------------
 
             app.UseEndpoints(endpoints =>
             {
