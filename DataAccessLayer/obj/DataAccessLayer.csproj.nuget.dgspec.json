@@ -51,6 +51,14 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.9, )"
+            },
+            "NLog.Config": {
+              "target": "Package",
+              "version": "[4.7.9, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"

@@ -905,3 +905,5 @@ C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debu
 C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Saves\Index.cshtml.g.cs
 C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Saves\LoadedGame.cshtml.g.cs
 C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\obj\Debug\net5.0\Razor\Views\Shared\_NavBar.cshtml.g.cs
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\bin\Debug\net5.0\NLog.config
+C:\Users\anasanchez\source\repos\AnaOddles\MinesweeperWeb\MinsweeperWeb\bin\Debug\net5.0\NLog.dll

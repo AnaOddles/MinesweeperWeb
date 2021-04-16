@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MinsweeperWeb.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,10 @@ namespace MinsweeperWeb
             });
             //----------------------------------------------
 
+            //----------------------------------------------
+            //Dependecy injection for Logger
+            services.AddTransient<ILogger, MyLogger>();
+            //----------------------------------------------
             services.AddControllersWithViews();
         }
 

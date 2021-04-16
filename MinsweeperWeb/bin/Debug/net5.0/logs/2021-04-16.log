@@ -1,0 +1,157 @@
+2021-04-16 00:53:15.8770 INFO Processing a login attempt.
+2021-04-16 00:53:15.9123 INFO Attempting Login- Username: AnaOddles Password: test1234
+2021-04-16 00:53:17.6453 INFO Login Successful with- Username: AnaOddles Password: test1234
+2021-04-16 00:53:28.3473 INFO Processing a logout attempt.
+2021-04-16 00:53:28.3473 INFO Sucess removal of session at logout
+2021-04-16 01:02:35.7760 INFO Processing a login attempt.
+2021-04-16 01:02:35.8071 INFO Attempting Login- Username: pablo Password: test1234
+2021-04-16 01:02:37.7670 INFO Login Successful with- Username: pablo Password: test1234
+2021-04-16 01:02:54.1522 INFO Processing a logout attempt.
+2021-04-16 01:02:54.1522 INFO Sucess removal of session at logout
+2021-04-16 01:05:10.4064 INFO Processing a login attempt.
+2021-04-16 01:05:10.4514 INFO Attempting Login- Username: AnaOddles Password: test1234
+2021-04-16 01:05:10.9216 INFO Login Successful with- Username: AnaOddles Password: test1234
+2021-04-16 01:05:15.7389 INFO Processing a logout attempt for - AnaOddles
+2021-04-16 01:05:15.7389 INFO Sucess removal of session at logout
+2021-04-16 01:06:04.2096 INFO Registration attempt.
+2021-04-16 01:06:04.2298 INFO Registation attempt successful for: flama
+2021-04-16 01:06:04.2465 WARN Successfully created session for - False at registration
+2021-04-16 01:06:14.2033 INFO Processing a logout attempt for - flama
+2021-04-16 01:06:14.2033 INFO Sucess removal of session at logout
+2021-04-16 01:33:55.2386 INFO Registration attempt.
+2021-04-16 01:33:57.2437 INFO Registation attempt successful for: test
+2021-04-16 01:33:57.2942 INFO Successfully created session for - test at registration
+2021-04-16 01:34:40.9851 INFO Processing a login attempt.
+2021-04-16 01:34:40.9851 INFO Attempting Login- Username: AnaOddles Password: test1234
+2021-04-16 01:34:40.9851 INFO Login Successful with- Username: AnaOddles Password: test1234
+2021-04-16 01:34:50.6174 INFO Processing a logout attempt for - AnaOddles
+2021-04-16 01:34:50.6174 INFO Sucess removal of session at logout
+2021-04-16 01:35:27.0542 INFO Registration attempt.
+2021-04-16 01:35:27.0542 INFO Registation attempt successful for: pablop
+2021-04-16 01:35:27.0742 INFO Successfully created session for - pablop at registration
+2021-04-16 01:35:36.1282 INFO Processing a logout attempt for - pablop
+2021-04-16 01:35:36.1282 INFO Sucess removal of session at logout
+2021-04-16 01:37:40.8524 INFO Processing a login attempt.
+2021-04-16 01:37:40.8524 INFO Attempting Login- Username: AnaOddles Password: test1234
+2021-04-16 01:37:40.8524 INFO Login Successful with- Username: AnaOddles Password: test1234
+2021-04-16 01:37:52.0855 INFO Processing a logout attempt for - AnaOddles
+2021-04-16 01:37:52.0855 INFO Sucess removal of session at logout
+2021-04-16 01:41:49.8072 INFO Registration attempt.
+2021-04-16 01:41:49.8072 INFO Registation attempt successful for: pablop
+2021-04-16 01:41:49.8072 INFO Successfully created session for - pablop at registration
+2021-04-16 01:42:32.8351 INFO Processing a login attempt.
+2021-04-16 01:42:32.8351 INFO Attempting Login- Username: pablop Password: test1234
+2021-04-16 01:42:32.8351 INFO Login Successful with- Username: pablop Password: test1234
+2021-04-16 01:43:48.3676 INFO Processing a login attempt.
+2021-04-16 01:43:48.3676 INFO Attempting Login- Username: pablop Password: test1234
+2021-04-16 01:43:48.3676 INFO Login Successful with- Username: pablop Password: test1234
+2021-04-16 01:46:58.3381 INFO Registration attempt.
+2021-04-16 01:46:58.8266 INFO Registation attempt successful for: pablop
+2021-04-16 01:46:58.8830 INFO Successfully created session for - pablop at registration
+2021-04-16 01:52:23.1908 INFO Registration attempt.
+2021-04-16 01:52:24.7846 INFO Registation attempt successful for: testing
+2021-04-16 01:52:24.8162 INFO Successfully created session for - testing at registration
+2021-04-16 01:55:08.2846 INFO Registration attempt.
+2021-04-16 01:55:09.0260 INFO Registation attempt successful for: pablo
+2021-04-16 01:55:09.0658 INFO Successfully created session for - pablo at registration
+2021-04-16 01:58:54.1163 INFO Registration attempt.
+2021-04-16 01:58:54.4675 INFO Registation attempt successful for: test
+2021-04-16 01:58:54.5048 INFO Successfully created session for - test at registration
+2021-04-16 02:00:57.9512 INFO Registration attempt.
+2021-04-16 02:00:58.3912 INFO Registation attempt successful for: pablo56
+2021-04-16 02:00:58.4218 INFO Successfully created session for - pablo56 at registration
+2021-04-16 02:08:47.8526 INFO Registration attempt.
+2021-04-16 02:08:50.0743 INFO Registation attempt successful for: pablo45
+2021-04-16 02:08:50.1299 INFO Successfully created session for - pablo45 at registration
+2021-04-16 02:20:02.4768 INFO Registration attempt.
+2021-04-16 02:20:03.2536 INFO Registation attempt successful for: pablo
+2021-04-16 02:20:03.2980 INFO Successfully created session for - pablo at registration
+2021-04-16 02:30:35.3994 INFO Registration attempt.
+2021-04-16 02:30:36.3150 INFO Registation attempt successful for: pablo56
+2021-04-16 02:30:36.3625 INFO Successfully created session for - pablo56 at registration
+2021-04-16 02:33:11.9935 INFO Registration attempt.
+2021-04-16 02:33:12.2556 INFO Registation attempt successful for: pablo
+2021-04-16 02:33:12.2756 INFO Successfully created session for - pablo at registration
+2021-04-16 02:37:06.3764 INFO Registration attempt.
+2021-04-16 02:37:07.2570 INFO Registation attempt successful for: testing
+2021-04-16 02:37:07.3050 INFO Successfully created session for - testing at registration
+2021-04-16 02:38:09.7639 INFO Registration attempt.
+2021-04-16 02:38:09.7639 INFO Registation attempt successful for: pablogg
+2021-04-16 02:38:09.7733 INFO Successfully created session for - pablogg at registration
+2021-04-16 02:38:31.3006 INFO Processing a logout attempt for - 
+2021-04-16 02:38:31.3006 INFO Sucess removal of session at logout
+2021-04-16 02:40:21.8335 INFO Registration attempt.
+2021-04-16 02:40:21.8421 INFO Registation attempt successful for: pablott
+2021-04-16 02:40:21.8769 INFO Successfully created session for - pablott at registration
+2021-04-16 02:42:16.8438 INFO Processing a login attempt.
+2021-04-16 02:42:16.8438 INFO Attempting Login- Username: pablott Password: test1234
+2021-04-16 02:42:16.8520 INFO Login Successful with- Username: pablott Password: test1234
+2021-04-16 02:42:24.6442 INFO Processing a logout attempt for - pablott
+2021-04-16 02:42:24.6442 INFO Sucess removal of session at logout
+2021-04-16 02:42:37.0550 INFO Processing a login attempt.
+2021-04-16 02:42:37.0550 INFO Attempting Login- Username: pablott Password: test1234
+2021-04-16 02:42:37.0550 INFO Login Successful with- Username: pablott Password: test1234
+2021-04-16 02:45:59.3207 INFO Registration attempt.
+2021-04-16 02:45:59.6123 INFO Registation attempt successful for: ana
+2021-04-16 02:45:59.6334 INFO Successfully created session for - ana at registration
+2021-04-16 02:46:02.0080 INFO Session - ana
+2021-04-16 02:47:33.7702 INFO Session - 
+2021-04-16 02:49:05.9599 INFO Registration attempt.
+2021-04-16 02:49:06.3684 INFO Registation attempt successful for: babyyoda
+2021-04-16 02:49:06.4103 INFO Successfully created session for - babyyoda at registration
+2021-04-16 02:49:23.2903 INFO Session - 
+2021-04-16 02:50:36.3959 INFO Session - 
+2021-04-16 02:52:03.6619 INFO Registration attempt.
+2021-04-16 02:52:04.0251 INFO Registation attempt successful for: pablo78
+2021-04-16 02:52:04.0665 INFO Successfully created session for - pablo78 at registration
+2021-04-16 02:52:36.7525 INFO Processing a login attempt.
+2021-04-16 02:52:36.7525 INFO Attempting Login- Username: pablo76 Password: test1234
+2021-04-16 02:52:36.7824 WARN Login Faliure with- Username: pablo76 Password: test1234
+2021-04-16 02:53:59.0571 INFO Registration attempt.
+2021-04-16 02:53:59.0719 INFO Registation attempt successful for: pablo
+2021-04-16 02:53:59.0875 INFO Successfully created session for - pablo at registration
+2021-04-16 02:54:23.8767 INFO Processing a login attempt.
+2021-04-16 02:54:23.8767 INFO Attempting Login- Username: pablo Password: test1234
+2021-04-16 02:54:23.8834 INFO Login Successful with- Username: pablo Password: test1234
+2021-04-16 02:54:23.9096 INFO Session - pablo
+2021-04-16 02:55:02.8895 INFO Session - 
+2021-04-16 02:56:18.4715 INFO Registration attempt.
+2021-04-16 02:56:18.4901 INFO Registation attempt successful for: pablogg
+2021-04-16 02:56:18.5111 INFO Successfully created session for - pablogg at registration
+2021-04-16 02:56:25.6754 INFO Session - pablogg
+2021-04-16 02:56:55.7391 INFO Processing a login attempt.
+2021-04-16 02:56:55.7391 INFO Attempting Login- Username: pablogg Password: test1234
+2021-04-16 02:56:55.7443 INFO Login Successful with- Username: pablogg Password: test1234
+2021-04-16 02:56:55.7613 INFO Session - pablogg
+2021-04-16 02:57:04.3430 INFO Session - pablogg
+2021-04-16 02:58:35.6042 INFO Processing a login attempt.
+2021-04-16 02:58:35.6042 INFO Attempting Login- Username: pablogg Password: test1234
+2021-04-16 02:58:35.6042 INFO Login Successful with- Username: pablogg Password: test1234
+2021-04-16 02:58:35.6344 INFO Session - pablogg
+2021-04-16 02:58:37.4292 INFO Processing a logout attempt for - pablogg
+2021-04-16 02:58:37.4292 INFO Sucess removal of session at logout
+2021-04-16 03:00:08.2077 INFO Session - 
+2021-04-16 03:01:18.8289 INFO Registration attempt.
+2021-04-16 03:01:18.8384 INFO Registation attempt successful for: pablo22
+2021-04-16 03:01:18.8384 INFO Successfully created session for - pablo22 at registration
+2021-04-16 03:01:39.4855 INFO Session - 
+2021-04-16 03:01:48.5524 INFO Processing a login attempt.
+2021-04-16 03:01:48.5595 INFO Attempting Login- Username: pablo22 Password: test1234
+2021-04-16 03:01:48.5595 INFO Login Successful with- Username: pablo22 Password: test1234
+2021-04-16 03:01:48.6027 INFO Session - pablo22
+2021-04-16 03:02:14.6390 INFO Session - 
+2021-04-16 03:02:20.1622 INFO Processing a login attempt.
+2021-04-16 03:02:20.1655 INFO Attempting Login- Username: pablo22 Password: test123
+2021-04-16 03:02:20.1926 WARN Login Faliure with- Username: pablo22 Password: test123
+2021-04-16 03:02:30.0733 INFO Processing a login attempt.
+2021-04-16 03:02:30.0733 INFO Attempting Login- Username: pablo22 Password: test1234
+2021-04-16 03:02:30.0733 INFO Login Successful with- Username: pablo22 Password: test1234
+2021-04-16 03:02:30.0876 INFO Session - pablo22
+2021-04-16 03:02:50.6975 INFO Session - pablo22
+2021-04-16 03:03:17.1203 INFO Session - pablo22
+2021-04-16 03:03:44.7796 INFO Processing a logout attempt for - 
+2021-04-16 03:03:44.7796 INFO Sucess removal of session at logout
+2021-04-16 03:04:03.1347 INFO Processing a login attempt.
+2021-04-16 03:04:03.1347 INFO Attempting Login- Username: pablo22 Password: test1234
+2021-04-16 03:04:03.1347 INFO Login Successful with- Username: pablo22 Password: test1234
+2021-04-16 03:04:03.1826 INFO Session - pablo22

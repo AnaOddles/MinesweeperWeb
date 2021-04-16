@@ -10,6 +10,8 @@ using DataAccessLayer;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using NLog;
+using MinsweeperWeb.Utility;
 
 namespace MinsweeperWeb.Controllers
 {
@@ -42,7 +44,7 @@ namespace MinsweeperWeb.Controllers
             //Setup the game board 
             gameBoard = gameRules.SetupGame(10, gameBoard);
             gameStatus = "In Progress";
-
+            MyLogger.GetInstance().Info("Session - " + HttpContext.Session.GetString("username"));
             //If the session is not empty - user logged in
             if (!string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
             {
@@ -50,12 +52,11 @@ namespace MinsweeperWeb.Controllers
                 userName = HttpContext.Session.GetString("username");
             }
             else
+            {
                 userName = "";
+            }
+                
            
-            
-
-
-
             game.GameBoard = gameBoard;
             game.numOfClick = clicks;
             game.UserName = userName;
